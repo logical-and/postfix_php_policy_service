@@ -18,11 +18,15 @@ if (!empty($args['sasl_username']))
 		sendResult(ACTION_REJECT, 'Error occured: ' . $e->getMessage());
 	}
 
-	if (empty($table[$args['sasl_username']])) sendResult(ACTION_REJECT, "Username \"{$args['sasl_username']}\" is unknown!");
+	if (empty($table[$args['sasl_username']]))
+	{
+		sendResult(ACTION_REJECT, "Username \"{$args['sasl_username']}\" is unknown!");
+	}
 	elseif ($args['sender'] != $table[$args['sasl_username']]['email'])
 	{
 		sendResult(ACTION_REJECT,
-			'Your account can only send email from "' . $table[$args['sasl_username']]['email'] . '" email! ' .
+			'Your account can only send email from "' .
+			$table[$args['sasl_username']]['email'] . '" email! ' .
 			"(tried from \"{$args['sender']}\")");
 	}
 }
