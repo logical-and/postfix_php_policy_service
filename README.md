@@ -46,3 +46,5 @@ if (!empty($args['sasl_username']))
 sendResult(ACTION_ALLOW);
 ```
 
+Based on [SMTPD_POLICY_README](http://www.postfix.org/SMTPD_POLICY_README.html)
+
