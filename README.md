@@ -3,7 +3,7 @@
 To customize filtering by sender (live example):
 
 1. Add
-```smtpd_sender_restrictions = check_policy_service unix:private/smtp-check-sender```
+<pre>smtpd_sender_restrictions = check_policy_service unix:private/smtp-check-sender</pre>
 to /etc/postfix/mail.cf
 
 2. Add
